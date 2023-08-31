@@ -1,0 +1,49 @@
+#root {
+  height: calc(100vh - 2rem);
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: start; */
+  /* flex-wrap: wrap; */
+  margin: 1rem 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: large;
+}
+
+html {
+  color-scheme: dark;
+}
+
+button {
+  padding: 0.5rem 1rem;
+}
+
+.movies {
+  flex: 1;
+  display: flex;
+  overflow: auto;
+}
+
+.box {
+  display: flex;
+  min-height: min-content;
+  /* min-height: fit-content; */
+}
+
+.poster {
+  width: 10rem;
+  padding: 0.9rem;
+  border: solid transparent 0.1rem;
+}
+
+.poster:hover {
+  border: solid white 0.1rem;
+  border-radius: 0.5rem;
+}
+
+p {
+  background-color: red;
+}
