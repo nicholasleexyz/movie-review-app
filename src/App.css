@@ -31,11 +31,11 @@ button {
 .movies {
   display: flex;
   overflow-x: auto;
-  /* scrollbar-color: var(--red) var(--purple-light); */
   scrollbar-width: thin;
 }
 
 .box {
+  flex-grow: 1;
   display: flex;
   height: fit-content;
   padding: 0.5rem 0;
@@ -71,5 +71,48 @@ button {
   flex-grow: 1;
   display: flex;
   justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+}
+
+.movie-info {
+  width: 60rem;
+  height: 100%;
+  display: flex;
+  margin: 0 1rem;
+  justify-content: start;
   align-items: center;
+  flex-flow: column;
+  /* background-color: pink; */
+}
+
+
+/*VVV MESS VVV  (╯‵□′)╯︵┻━┻ */
+
+.movie-reviews-container {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  flex-flow: column;
+  height: 200px;
+}
+
+.movie-reviews {
+  flex-flow: column;
+  flex-grow: 1;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: grey;
+  /* padding: 1rem; */
+  overflow-y: auto;
+}
+
+.review {
+  background-color: grey;
+  width: 100%;
+  height: 10rem;
+  border: solid black 0.25rem;
+  margin: 0.5rem;
 }
