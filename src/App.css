@@ -1,16 +1,23 @@
+:root {
+  --purple-dark: #2a2734;
+  --purple-light: #887c93;
+  --red: #ad3e53;
+  --white: #f4f7f6;
+  --orange-light: #b69568;
+}
+
 #root {
-  height: calc(100vh - 2rem);
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: start; */
-  /* flex-wrap: wrap; */
-  margin: 1rem 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 * {
   margin: 0;
   padding: 0;
   font-size: large;
+  font-family: sans-serif;
+  color: var(--white);
 }
 
 html {
@@ -22,28 +29,47 @@ button {
 }
 
 .movies {
-  flex: 1;
   display: flex;
-  overflow: auto;
+  overflow-x: auto;
+  /* scrollbar-color: var(--red) var(--purple-light); */
+  scrollbar-width: thin;
 }
 
 .box {
   display: flex;
-  min-height: min-content;
-  /* min-height: fit-content; */
+  height: fit-content;
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+  background-image: linear-gradient(0deg, rgba(34, 30, 32, 0.5) 70%, rgba(103, 129, 161, 0.50) 100%), url('/metall005-new-tileable.png');
+  background-size: 256px;
+  background-attachment: fixed;
 }
 
 .poster {
-  width: 10rem;
-  padding: 0.9rem;
-  border: solid transparent 0.1rem;
+  width: 20vw;
+  min-width: 7.5rem;
+  max-width: 15rem;
+  margin: 0 0.25rem;
+  border: solid transparent 0.2rem;
+  transition: all 0.2s ease-out;
 }
 
 .poster:hover {
-  border: solid white 0.1rem;
-  border-radius: 0.5rem;
+  position: relative;
+  transform: translate(0, -0.25rem);
+  border: solid var(--white) 0.2rem;
 }
 
-p {
-  background-color: red;
+.page-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: x-large;
+  padding: 2rem 0 1rem 0;
+}
+
+.content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
