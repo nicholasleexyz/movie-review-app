@@ -8,8 +8,6 @@
 
 #root {
   height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 * {
@@ -30,6 +28,7 @@ button {
 
 .movies {
   display: flex;
+  flex-grow: 1;
   overflow-x: auto;
   scrollbar-width: thin;
 }
@@ -49,15 +48,22 @@ button {
   width: 20vw;
   min-width: 7.5rem;
   max-width: 15rem;
-  margin: 0 0.25rem;
+  padding: 0.25rem;
+}
+
+.not-current-poster {
   border: solid transparent 0.2rem;
   transition: all 0.2s ease-out;
 }
 
-.poster:hover {
+.not-current-poster:hover {
   position: relative;
   transform: translate(0, -0.25rem);
-  border: solid var(--white) 0.2rem;
+  border: solid grey 0.2rem;
+}
+
+.current-poster {
+  border: solid white 0.2rem;
 }
 
 .page-title {
@@ -67,52 +73,66 @@ button {
   padding: 2rem 0 1rem 0;
 }
 
-.content {
+.info-content {
   flex-grow: 1;
+  height: 100%;
+  width: 60%;
+  /* background-color: blueviolet; */
+}
+
+
+.content {
+  /* background-color: antiquewhite; */
+  height: calc(100vh - 29.71979375rem);
+  width: 100%;
+  display: flex;
+}
+
+.reviews-content {
   display: flex;
   justify-content: center;
-  align-items: start;
-  flex-wrap: wrap;
+  height: calc(100%);
+  width: 40%;
+  /* background-color: var(--purple-dark); */
 }
-
-.movie-info {
-  width: 60rem;
-  height: 100%;
-  display: flex;
-  margin: 0 1rem;
-  justify-content: start;
-  align-items: center;
-  flex-flow: column;
-  /* background-color: pink; */
-}
-
-
-/*VVV MESS VVV  (╯‵□′)╯︵┻━┻ */
 
 .movie-reviews-container {
+  width: 90%;
   display: flex;
-  align-items: center;
-  padding: 1rem;
-  width: 100%;
-  flex-flow: column;
-  height: 200px;
+  justify-content: center;
+  overflow-y: auto;
+  scrollbar-width: thin;
 }
 
 .movie-reviews {
-  flex-flow: column;
-  flex-grow: 1;
+  width: calc(100% - 1rem);
+  /* max-width: 40rem;
+  min-width: 5rem; */
+  height: fit-content;
   display: flex;
-  justify-content: start;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-color: grey;
-  /* padding: 1rem; */
-  overflow-y: auto;
+  background-color: var(--purple-dark);
 }
 
 .review {
   background-color: grey;
-  width: 100%;
+  width: calc(100% - 4rem);
+  padding: 0 1rem;
   height: 10rem;
   border: solid black 0.25rem;
   margin: 0.5rem;
+}
+
+.movie-info {
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
+  display: flex;
+  padding: 1rem;
+  justify-content: start;
+  align-items: center;
+  flex-flow: column;
+  background-color: var(--purple-dark);
+  /* background-color: pink; */
 }

@@ -6,20 +6,29 @@ const baseUrl = "http://www.omdbapi.com/?"
 
 const movies = await fetch('/movies.json').then(response => response.json())
 
-
 // const currentMovieData = await getData();
 function App() {
 // i=tt4154796&apikey=c8b52503
   const [currentMovieIndex, setCurrentMovieIndex] = useState(1);
   const [movieData, setMovieData] = useState([]);
+  // console.log(movies);
 
   useEffect(() => {
-      fetch(`${baseUrl}apikey=${apikey}&i=${movies.Search[currentMovieIndex].imdbID}`)
+      const controller = new AbortController();
+      fetch(`${baseUrl}apikey=${apikey}&i=${movies.Search[currentMovieIndex].imdbID}`, {signal: controller.signal})
       .then(response => response.json())
       .then(data => setMovieData(data))
+
+      // console.log('use Effect');
+
+      return () => {
+        controller.abort();
+      }
   }, [currentMovieIndex]);
 
-  console.log(movieData);
+  // useEffect(() =>{
+  //   console.log(movieData);
+  // }, [movieData])
 
   // console.log(currentMovieData);
   // const plot = currentMovieData.Plot;
@@ -31,25 +40,30 @@ function App() {
       <h1 className='page-title'>Movie Reviews</h1>
       <div className="movies">
         <div className="box">
-          {movies.Search.map((movie, i) => <img className='poster' key={i} src={movie.Poster} onClick={() => setCurrentMovieIndex(i)}></img>)}
+          {movies.Search.map((movie, i) => <img key={i} className={`poster ${i === currentMovieIndex ? 'current-poster' : 'not-current-poster'}`} src={movie.Poster} onClick={() => setCurrentMovieIndex(i)}/>)}
         </div>
       </div>
+
       <div className="content">
-        <div className="movie-info">
-          <h2 style={{margin: '1rem 0'}}>{movieData.Title}</h2>
-          <p>Synopsis: {movieData.Plot}</p>
+        <div className="info-content">
+          <div className="movie-info">
+            <h2>{movieData.Title}</h2>
+            <p>{movieData.Plot}</p>
+          </div>
         </div>
-        <div className="movie-reviews">
-          <h2 style={{margin: '1rem 0', textTransform: 'Uppercase'}}>Reviews</h2>
+
+        <div className="reviews-content">
           <div className="movie-reviews-container">
-            <div className="review"></div>
-            <div className="review"></div>
-            <div className="review"></div>
-            <div className="review"></div>
-            <div className="review"></div>
-            <div className="review"></div>
-            <div className="review"></div>
-            <div className="review"></div>
+            <div className="movie-reviews">
+              <h1 style={{margin: '1rem 0'}}>asdklfj;sadkfj</h1>
+              <div className="review"></div>
+              <div className="review"></div>
+              <div className="review"></div>
+              <div className="review"></div>
+              <div className="review"></div>
+              <div className="review"></div>
+              <div className="review"></div>
+            </div>
           </div>
         </div>
       </div>
