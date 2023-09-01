@@ -26,9 +26,9 @@ function App() {
       }
   }, [currentMovieIndex]);
 
-  // useEffect(() =>{
-  //   console.log(movieData);
-  // }, [movieData])
+  useEffect(() =>{
+    console.log(movieData);
+  }, [movieData])
 
   // console.log(currentMovieData);
   // const plot = currentMovieData.Plot;
