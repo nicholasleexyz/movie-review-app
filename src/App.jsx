@@ -55,7 +55,7 @@ function App() {
         <div className="reviews-content">
           <div className="movie-reviews-container">
             <div className="movie-reviews">
-              <h1 style={{margin: '1rem 0'}}>asdklfj;sadkfj</h1>
+              <h1 style={{margin: '1rem 0'}}>{movieData.Title} (Reviews)</h1>
               <div className="review"></div>
               <div className="review"></div>
               <div className="review"></div>
