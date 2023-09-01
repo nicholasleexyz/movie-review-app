@@ -45,8 +45,8 @@ button {
 }
 
 .poster {
-  width: 20vw;
-  min-width: 7.5rem;
+  width: 15vw;
+  min-width: 15rem;
   max-width: 15rem;
   padding: 0.25rem;
 }
@@ -73,6 +73,20 @@ button {
   padding: 2rem 0 1rem 0;
 }
 
+.movie-info {
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
+  display: flex;
+  padding: 1rem;
+  justify-content: start;
+  align-items: center;
+  flex-flow: column;
+  background-color: var(--purple-dark);
+  border-radius: 1rem 1rem 0 0;
+  margin-left: 0.5rem;
+  /* background-color: pink; */
+}
+
 .info-content {
   flex-grow: 1;
   height: 100%;
@@ -86,6 +100,7 @@ button {
   height: calc(100vh - 29.71979375rem);
   width: 100%;
   display: flex;
+  justify-content: center;
 }
 
 .reviews-content {
@@ -102,6 +117,7 @@ button {
   justify-content: center;
   overflow-y: auto;
   scrollbar-width: thin;
+  margin: 1rem 0;
 }
 
 .movie-reviews {
@@ -114,6 +130,7 @@ button {
   justify-content: center;
   align-items: center;
   background-color: var(--purple-dark);
+  border-radius: 1rem 0 0 1rem;
 }
 
 .review {
@@ -123,16 +140,9 @@ button {
   height: 10rem;
   border: solid black 0.25rem;
   margin: 0.5rem;
+  border-radius: 1rem;
 }
 
-.movie-info {
-  width: calc(100% - 2rem);
-  height: calc(100% - 2rem);
-  display: flex;
-  padding: 1rem;
-  justify-content: start;
-  align-items: center;
-  flex-flow: column;
-  background-color: var(--purple-dark);
-  /* background-color: pink; */
+.review:last-child {
+  margin-bottom: 1rem;
 }
