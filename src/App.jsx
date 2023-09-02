@@ -56,7 +56,10 @@ function App() {
           <div className="movie-reviews-container">
             <div className="movie-reviews">
               <h1 style={{ margin: '1rem 0' }}>{movieData.Title} (Reviews)</h1>
-              <div className="review"></div>
+              <div className="review">
+                {/* star rating */}
+                {[...Array(5).keys()].map(i => <img key={i} src='/public/star-solid.svg' className='star' />)}
+              </div>
               <div className="review"></div>
               <div className="review"></div>
               <div className="review"></div>
