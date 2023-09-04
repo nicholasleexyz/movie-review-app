@@ -6,8 +6,6 @@ export default function ReviewList({
   currentReviews,
   currentMovieIndex,
 }) {
-  // currentReviews should go here
-
   return (
     <div className={isHidden ? "hidden" : ""}>
       <h1 style={{ margin: "1rem 0" }}>{title} (Reviews)</h1>

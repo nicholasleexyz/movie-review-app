@@ -11,7 +11,7 @@ export default function Stars({ isStatic, rating, callback }) {
   //   setCurrentRating(currentRating);
   // }, [currentRating])
 
-  function asdf(index) {
+  function onCallback(index) {
     // setRating(index + 1);
     callback(index + 1);
   }
@@ -23,7 +23,7 @@ export default function Stars({ isStatic, rating, callback }) {
           key={i}
           src={i < rating ? starImagePathSolid : starImagePathRegular}
           className={`star ${isStatic ? "star-red" : "star-orange"}`}
-          onClick={isStatic ? null : () => asdf(i)}
+          onClick={isStatic ? null : () => onCallback(i)}
         />
       ))}
     </div>

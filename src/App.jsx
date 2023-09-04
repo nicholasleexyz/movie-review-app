@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 // import ReviewForm from "./components/ReviewForm";
 import "./styles/App.css";
 import Content from "./components/Content";
-import MovieList from "./MovieList";
+import MovieList from "./components/MovieList";
 
 const apikey = "c8b52503";
 const baseUrl = "http://www.omdbapi.com/?";

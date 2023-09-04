@@ -1,4 +1,4 @@
-import Movie from "./components/Movie";
+import Movie from "./Movie";
 
 /* eslint-disable react/prop-types */
 export default function MovieList({

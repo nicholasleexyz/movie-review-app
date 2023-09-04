@@ -7,6 +7,7 @@ export default function ReviewForm({
   setCurrentReviews,
   currentReviews,
   currentMovieIndex,
+  averageRatingCallback,
 }) {
   const [currentUser, setCurrentUser] = useState("");
   const [currentComment, setCurrentComment] = useState("");
@@ -74,6 +75,9 @@ export default function ReviewForm({
         >
           <button
             onClick={() => {
+              if (currentUser === "") {
+                return;
+              }
               const newReview = {
                 movieID: currentMovieIndex,
                 user: currentUser,
@@ -84,9 +88,21 @@ export default function ReviewForm({
               const reviews = currentReviews.concat(newReview);
               inputComment.current.value = "";
               inputUser.current.value = "";
-              setCurrentRating(0);
+              setCurrentRating(1);
 
               setCurrentReviews(reviews);
+
+              const validReviews = reviews.filter(
+                (review) => review.movieID === currentMovieIndex
+              );
+              const sum = validReviews
+                .map((r) => r.rating)
+                .reduce((current, a) => current + a, 0);
+
+              const average = Math.round(sum / validReviews.length);
+              // console.log("average: " + average);
+
+              averageRatingCallback(average);
             }}
           >
             Submit
