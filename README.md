@@ -1,8 +1,31 @@
-# React + Vite
+Review lists will toggle based on the movie index
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- App <!-- Get data movie data in App then pass it down -->
+  - MovieList (movie data) <!-- Movie component for each movie in data -->
+    - Movie (image, synopsis, rating)
+    - Movie...
+  - ReviewSubmissionForm (movie data) <!-- ReviewList for each movie in data -->
+    - ReviewList 
+      - Review
+        - Stars
+      - Review...
+        - Stars
+    - ReviewList 
+      - Review
+        - Stars
+      - Review...
+        - Stars
 
-Currently, two official plugins are available:
+layout
+<>
+  <!-- banner like movie selection -->
+  [ movie list]
+</>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<> row/column depending on resolution
+  <> column
+    [ movie content ]
+    [ review form ]
+  </> column
+  [ review content ]
+</>
