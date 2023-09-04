@@ -35,7 +35,6 @@ export default function ContentInformation({
             currentMovieIndex={currentMovieIndex}
             averageRatingCallback={setCurrentAverage}
           ></ReviewForm>
-          {/* <ReviewSubmissionForm title={movieData.Title}/> */}
         </div>
       </div>
     </div>

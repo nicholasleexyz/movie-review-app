@@ -10,7 +10,6 @@ export default function ContentReviews({
     <div className="reviews-content">
       <div className="movie-reviews-container">
         <div className="movie-reviews">
-          {/* <ReviewList></ReviewList> */}
           <ReviewList
             title={movies.Search[currentMovieIndex].Title}
             currentReviews={currentReviews}

@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import Movie from "./Movie";
 
-/* eslint-disable react/prop-types */
 export default function MovieList({
   currentMovieIndex,
   setCurrentMovieIndex,
@@ -9,7 +9,6 @@ export default function MovieList({
   return (
     <div className="movies">
       <div className="box">
-        {/* function Movie({ isCurrent, poster, setCurrentMovieIndex, index }) { */}
         {movies.Search.map((movie, i) => (
           <Movie
             key={i}

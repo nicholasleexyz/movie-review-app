@@ -84,11 +84,12 @@ export default function ReviewForm({
                 comment: currentComment,
                 rating: currentRating,
               };
-              // console.log("current reviews: " + currentReviews);
               const reviews = currentReviews.concat(newReview);
               inputComment.current.value = "";
               inputUser.current.value = "";
               setCurrentRating(1);
+              setCurrentComment("");
+              setCurrentUser("");
 
               setCurrentReviews(reviews);
 
@@ -100,7 +101,6 @@ export default function ReviewForm({
                 .reduce((current, a) => current + a, 0);
 
               const average = Math.round(sum / validReviews.length);
-              // console.log("average: " + average);
 
               averageRatingCallback(average);
             }}

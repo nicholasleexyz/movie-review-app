@@ -4,15 +4,7 @@ const starImagePathSolid = "/star-solid.svg";
 const starImagePathRegular = "/star-regular.svg";
 
 export default function Stars({ isStatic, rating, callback }) {
-  // const [currentRating, setRating] = useState(rating);
-
-  // console.log("t: " + typeof(setCurrentRating))
-  // useEffect(() => {
-  //   setCurrentRating(currentRating);
-  // }, [currentRating])
-
   function onCallback(index) {
-    // setRating(index + 1);
     callback(index + 1);
   }
 
