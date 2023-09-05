@@ -11,10 +11,10 @@ export default function Review({
   return (
     <div className={`review ${movieID === currentMovieIndex ? "" : "hidden"}`}>
       <Stars isStatic={true} rating={rating} />
-      <div className="">
-        <p>{user}</p>
-        <p>{comment}</p>
+      <div style={{ height: "100%", width: "100%" }} className="">
+        <p style={{ wordWrap: "break-word", width: "100%", height: "fit-content", backgroundColor: "" }}>{`"${comment}" `}</p>
+        <span>- {user}</span>
       </div>
-    </div>
+    </div >
   );
 }
