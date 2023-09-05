@@ -8,7 +8,7 @@ export default function ReviewList({
 }) {
   return (
     <div style={{ width: "100%" }} className={isHidden ? "hidden" : ""}>
-      <h1 style={{ margin: "1rem 0" }}>{title} (Reviews)</h1>
+      <h1 style={{ margin: "1rem 0", textAlign: "center" }}>{title} (Reviews)</h1>
       {currentReviews.map((review, i) => (
         <Review
           key={i * (currentMovieIndex + 1)}
