@@ -1,31 +1,9 @@
-Review lists will toggle based on the movie index
+# Movie Review App
 
-- App <!-- Get data movie data in App then pass it down -->
-  - MovieList (movie data) <!-- Movie component for each movie in data -->
-    - Movie (image, synopsis, rating)
-    - Movie...
-  - ReviewSubmissionForm (movie data) <!-- ReviewList for each movie in data -->
-    - ReviewList 
-      - Review
-        - Stars
-      - Review...
-        - Stars
-    - ReviewList 
-      - Review
-        - Stars
-      - Review...
-        - Stars
+## Running the project
 
-layout
-<>
-  <!-- banner like movie selection -->
-  [ movie list]
-</>
+> npm i
 
-<> row/column depending on resolution
-  <> column
-    [ movie content ]
-    [ review form ]
-  </> column
-  [ review content ]
-</>
+> npm run dev
+
+> then type 'o' to open in browser
